@@ -1191,7 +1191,7 @@ static int create_ssdp_sock_v6(
 	}
 	memset((void *)&ssdpMcastAddr, 0, sizeof(ssdpMcastAddr));
 #if defined(__APPLE__)
-	// ssdpMcastAddr.ipv6mr_interface = 0;
+	ssdpMcastAddr.ipv6mr_interface = 1;
 #else
 	ssdpMcastAddr.ipv6mr_interface = gIF_INDEX;
 #endif
