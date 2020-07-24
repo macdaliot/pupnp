@@ -19,12 +19,12 @@ jobs:
     - name: list interfaces 1
       if: matrix.os == 'macos-latest'
       run: networksetup -listallhardwareports
+    - name: list interfaces 2
+      if: matrix.os == 'macos-latest'
+      run: ifconfig -a
     - name: configure ipv6
       if: matrix.os == 'macos-latest'
       run: networksetup -setv6automatic Ethernet
-    - name: list interfaces 2
-      if: matrix.os == 'macos-latest'
-      run: networksetup -listallhardwareports
     - name: list interfaces 3
       if: matrix.os == 'macos-latest'
       run: ifconfig -a
