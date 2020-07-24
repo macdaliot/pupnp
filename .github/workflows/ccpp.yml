@@ -20,7 +20,7 @@ jobs:
       if: matrix.os == 'macos-latest'
       run: |
         networksetup -listallhardwareports
-        networksetup -setv6automatic en0
+        networksetup -setv6automatic Ethernet
         networksetup -listallhardwareports
         ifconfig -a
     - name: bootstrap and configure
