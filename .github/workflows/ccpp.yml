@@ -37,7 +37,7 @@ jobs:
           LDFLAGS="-fsanitize=address,leak"
     - name: make
       run: make
-    - name list interfaces
+    - name: list interfaces
       run: ip a
     - name: make check (upnp)
       run: cd upnp && make check || (cat test-suite.log && exit 1)
