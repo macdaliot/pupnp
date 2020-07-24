@@ -19,8 +19,7 @@ jobs:
     - name: list interfaces
       if: matrix.os == 'macos-latest'
       run: |
-        networksetup -listallhardwareports
-	ifconfig -a
+        networksetup -listallhardwareports && ifconfig -a
     - name: bootstrap and configure
       run: ./bootstrap && ./configure --enable-debug
     - name: make
